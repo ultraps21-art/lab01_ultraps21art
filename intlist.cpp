@@ -8,7 +8,9 @@
 using std::cout;
 
 // copy constructor
-IntList::IntList(const IntList& source) : head = nullptr, tail = nullptr {
+IntList::IntList(const IntList& source) {
+    head = nullptr; 
+    tail = nullptr; 
     Node* current = source.head;
     while (current != nullptr) {
         push_back(current->info);
@@ -32,7 +34,7 @@ int IntList::sum() const {
     int sumValue = 0;
     Node* current = head;
     while (current != nullptr) {
-        count += current->info;
+        sumValue += current->info;
         current = current->next;
     }
     return sumValue;
@@ -52,11 +54,11 @@ bool IntList::contains(int value) const {
 
 // returns maximum value in list, or 0 if empty list
 int IntList::max() const {
-    Node* current = head->next;
-    int maxValue = head->info;
+    Node* current = head;
     if (current == nullptr) {
         return 0;
     }
+    int maxValue = head->info;
     while (current != nullptr) {
         if (maxValue < current->info) {
             maxValue = current->info;
@@ -132,16 +134,19 @@ IntList& IntList::operator=(const IntList& source){
     tail = nullptr;
 
     //CC
-    Node* current = head.source;
-    while (current != nullptr) {
-        push_back(current->data);
-        current = current->next;
+    Node* temp = source.head;
+    while (temp != nullptr) {
+        push_back(temp->info);
+        temp = temp->next;
     }
     return *this;
 }
 
 // constructor sets up empty list
-IntList::IntList() : head = nullptr, tail = nullptr {}
+IntList::IntList() {
+    head = nullptr;
+    tail = nullptr;
+}
 
 
 // DO NOT CHANGE ANYTHING BELOW (READ IT THOUGH)
