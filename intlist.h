@@ -11,7 +11,7 @@ public:
     // constructor and 3 methods already done in intlist.cpp (NO CHANGE):
     IntList();              // constructor
     void print() const;     // print values separate by ' '
- 
+
 
     // destructor, copy constructor and 6 other METHODS YOU MUST 
     // IMPLEMENT IN intlist.cpp (NO CHANGE HERE):
